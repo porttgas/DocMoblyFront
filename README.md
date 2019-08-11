@@ -162,7 +162,7 @@ var quantidade = 20/*Por default, deixamos a quantidade como 20, mas pode se col
 ```
 
 ### Header do site (Menu)
-Pesquisar o bloco **cms_menu_subs** (Ou, na parte da lupa para pesquisa, mas no segundo campo de texto, procurar pelo html de algum dos itens do menu) para encontrar o bloco onde ficam os links e imagens do menu. Em n1 trocamos a imagem que aparece no mouseover da página, então pelo menos uma vez por semana há agendamento desse bloco. Se precisar adicionar ou remover algum dos itens do menu é só deletar toda a <code><li>...</li></code> com o conteúdo
+Pesquisar o bloco **cms_menu_subs** (Ou, na parte da lupa para pesquisa, mas no segundo campo de texto, procurar pelo html de algum dos itens do menu) para encontrar o bloco onde ficam os links e imagens do menu. Em n1 trocamos a imagem que aparece no mouseover da página, então pelo menos uma vez por semana há agendamento desse bloco. Se precisar adicionar ou remover algum dos itens do menu é só deletar toda a <code>li</code> com o conteúdo
 
 ## Filezilla
 Usamos o filezilla para inserir arquivos no servidor. É necessário o FTP e a senha para poder acessar. Quando se acessa, logo na pasta raiz já tem a pasta **campanha**. Acessá-la. Acessando a pasta 2019 (no caso do ano que foi feito a documentação), se encontram todas as imagens usadas nesse ano. É nessa pasta que devem ser colocadas as imagens que serão usadas em campanhas. <br>
