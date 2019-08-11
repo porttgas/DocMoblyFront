@@ -10,20 +10,20 @@ Todas essas instruções são feitas acessando, no menu do topo, o item **Conten
 ### Apostas
 No mesmo bloco da campanha principal, há o html das apostas. Ambos ficam no slider e elas aparecem, normalmente, depois das campanhas. Para facilitar, um código foi implementado no cronograma. Nas últimas colunas há blocos HTML e, ao lado, o nome da imagem que está sendo usada naquele bloco como background. <br>
 **Passos**: colocar as imagens no servidor via filezilla (Mais sobre sua funcionalidade mais tarde), copiar  o nome dos arquivos (incluindo a extenão (jpg, png, etc)), colar na coluna ao lado da que gera o HTML na aba de apostas, copiar esse código produzido e colar na parte indicada no código para as apostas
-### Subcampanhas:
+### Subcampanhas
 Seguem mais ou menos o mesmo principio das apostas. Um código já está aplicado no cronograma que pode gerar o html da mesma forma.<br>
 **Passos**: Colocar imagens no servidor via filezilla, copiar o nome do arquivo, colar o nome na coluna da aba e subcampanhas indicada para desktop, copiar o código gerado na planilha na parte e colar na parte indicada no bloco **home-linha-2** (Encontrado no mesmo processo da home-linha-1: buscar o nome na caixa de texto e acessá-las). Verificar se está na ordem certa.
-### Campanha principal e Apostas (mobile):
+### Campanha principal e Apostas (mobile)
 Na aba de apostas da planilha, na coluna indicada para imagens mobile, colocar o nome dos arquivos das imagens que irão aparecer nos blocos (Mesmo procedimento de jogar as imagens no servidor pelo filezilla). Colar o código gerado na coluna ao lado dessa na parte indicada dentro do código disponível no bloco **mobile-home**, também encontrado pela ferramenta de busca (Lupa na barra superior). <br>
 Para a campanha principal, colocar as imagens do mobile no servidor, substituir o nome da imagem na parte indicada, ir no cronograma, pegar da coluna mobile home e colocar no bloco junto com a imagem certa. Por fim, adaptar o css 
 <br>
 *PS:* Nos blocos relacionados a desktop, a adaptação do css pode ser feita no bloco dynamic css. Já nos blocos mobile, o css **deve** ser colocado dentro do bloco de estilos (Que geralmente já está no topo do código HTML daquele bloco).
 *PS²:* Os perenes ficam nesse mesmo bloco, com o código logo abaixo do das subs (Avisando para caso seja necessário tirar ou adicionar algum desses perenes).
-### Subcampanhas (mobile):
+### Subcampanhas (mobile)
 Na aba de subcampanhas do cronograma, colocar o nome dos arquivos das imagens que serão usadas (e que foram colocadas no servidor via filezilla) na coluna indicada para imagens mobile. Ao lado dessa coluna será gerado o HTML que deverá ser inserido na parte de conteúdo do bloco **mobile-subcampanha** (ou **mobile-subcampanhas**)
-### N1 (Lançamentos | Outlet):
+### N1 (Lançamentos | Outlet)
 Tanto o bloco de lançamentos (**newness**) quanto o de outlet (**promocoes-block**) já possuem o código para desktop e mobile. Geralmente sua estrutura não muda muito, então é só substituir o nome da imagem e o link (encontrado no cronograma, na aba de N1). 
-### Landing Pages:
+### Landing Pages
 As páginas de campanhas (Landing pages) podem ser de dois "tipos": as com ou sem menus. Com menus estão associadas a campanha principal e possuem uma imagem maior no topo com o menu logo abaixo dela. Já as sem vão consistir de um título laranja acima do catálogo e são usadas em **Apostas**, **Subcampanhas**, **N1** e  **Newsletters que possuem landing própria** .<br>
 **Criação de uma sem menu**: Iniciando pela mais simples: <br>
 No lado superior esquerdo, clicar no dropdown e selecionar a opção **static-page**. Uma caixa de texto será aberta ao lado. Ir no cronograma de campanhas e copiar o link (No caso, esse link estará na coluna ao lado da coluna de hash (Ou bem próxima), tendo o formato **tipodecampanha-data-hash** (ex: campanha-20190813-ahskjs)). Colar nessa caixa de texto. Abrir um arquivo .js no editor de texto de sua preferência. Acessar o link do [Github do front](https://mobly-front.github.io/) e ir para a parte de scripts. Clicar na caixa indicada como **CMS com Script title**. Um código assim será copiado para sua área de transferência:
@@ -91,11 +91,11 @@ Observe que dois campos extras foram adicionados:
     $('#folder-items-content').find('textarea.form_input').eq(1).val('**include-block:nome_do_block-mobile**');
 ```
 Na parte indicada como "nome_do_block", substituir pelo nome seguindo o padrão **data-nomedacampanha** (ex: 20190813-semanam). Aí todas as páginas da campanha com essas informações puxarão um mesmo **static-block**
-### Static-blocks:
+### Static-blocks
 Blocos que aparecem em mais de uma página, possibilitando uso de menus com mais facilidade. Geralmente usados em campanhas principais.<br>
 **Passos:** no dropdown na lateral superior esquerda, selecionar a opção **static-block**. Na caixa ao lado, colocar o nome do bloco (definido naquele script anteriormente mostrado). Uma página com um único campo (*text*) será aberta. É possível reusar o código de blocos anteriores. Para encontrá-lo, procurar pelo link da campanha anterior (O miolo, com data-tipo-hash) que tenha algum bloco. Procurar por esse bloco no icone da busca no menu superior. Copiar seu código. Na versão desktop, substituir a imagem e os links (No cronograma de campanhas, (Considerando que se esteja criando uma campanha principal) na aba de campanhas principais, uma das últimas colunas é Menu com HL ou algo assim. Copiar esses códigos relacionados àquela campanha (ignorar só o allproducts) e colar no lugar do menu que já está no código).<br>
 Na versão mobile, substituir o nome e o link da campanha allproducts no topo, copiar os links na coluna ao lado do menu com HL para desktop na planilha de cronograma, colar no lugar do que já estiver e salvar no bloco novo.
-### Página de imprensa:
+### Página de imprensa
 Para adicionar uma nova notícia na página de imprensa (Procurar no campo de busca por **imprensa**), adicionar ao vetor de noticias (Na parte de Dynamic JS) as informações sobre a nova, seguindo o padrão:
 ```Javascript
 {
@@ -138,7 +138,7 @@ Esse bloco possui um código que pega o link da imagem e gera no meio da página
 
 ### Agendamentos | Inserção de novos campos nas static-pages e blocks
 Para inserir novos campos nas static-pages | static-blocks, clicar no dropdown dentro dessa page|block no canto inferior esquerdo e selecionar a opção desejada. Uma das mais usadas é a **scheduled-date**, que vai servir para o agendamento das campanhas e alteração de id nos blocos. 
-#### Datas:
+#### Datas
 Aproveitando o assunto de agendamentos, segue as datas em que há trocas de campanhas 
 
 |Tipo|Datas (Definidas até o momento em que esse documento está sendo redigido)|
@@ -152,10 +152,10 @@ Aproveitando o assunto de agendamentos, segue as datas em que há trocas de camp
 ### Testes
 Para testar nossas campanhas, temos algumas páginas de teste: **home_main_content_teste**, **home_main_content_teste_t**, **home_main_content_teste_w**. Colocar os códigos a serem implementados nas campanhas em alguma dessas páginas (Elas seguem a mesma estrutura da home e de outras páginas, então para testar o slider da home, colocar o código na **home-linha-1-teste-t**, etc). Quando esse documento foi feito, o teste_t estava servindo como testes para a página principal, a teste estava para N1 e a teste_w estava para testar outras páginas.
 
-### Alterações na estrutura da home:
+### Alterações na estrutura da home
 Pesquisar home_main_content. Acessar o resultado com esse nome. Lá dentro estarão os blocos que aparecem na home (Desktop e mobile). Se um dia for necessário, poderá ser tirado algum(ns) desse(s) bloco(s) da home e eles deixarão de aparecer.
 
-### Gerar hashs:
+### Gerar hashs
 Entrar em qualquer uma das páginas (Não é necessário nem pesquisar, pode ser qualquer uma mesmo). Ir no dropdown no canto inferior esquerdo e adicionar o item **hash** *se na página já não tiver o campo*. Ir na página de scripts do [git do front](https://mobly-front.github.io/) e clicar na caixa preta do campo **Gerador de Hashs**. Ir até a página selecionada, usar algum dos comandos anteriormente ditos para abrir as ferramentas do desenvolvedor e, na aba de console, colar esse código. No console mesmo aparecerão 20 hashs que podem ser copiadas e coladas na planilha (Aba de hashs disponívels)
 ```Javascript
 var quantidade = 20/*Por default, deixamos a quantidade como 20, mas pode se colocar mais ou menos dependendo da necessidade. É só substituir esse valor pelo desejado */;var hashs = "";for(i=0; i < quantidade; i++){ $("#generateHash").click(); hashs += $(".form_input.hashInput").val()+"\n";}console.log(hashs);
@@ -198,10 +198,10 @@ No topo, na pasta do email, clicar em *create email > template based*. Escolher 
 ### E-mail apostas
 Uma vez por semana, normalmente as quartas, <s>nós usamos rosa</s> enviam um arquivo excel com sku's e informações sobre produtos. Até o momento sempre são 3 e é possível seguir o template já definido. Copiar o email indicado como *data_apostas* para uma outra na data atual. Alterar o seu nome, deixando a data certa. Substituir os itens dentro do html (O nome, link, imagem e preço. Preços estão no briefing, assim como nome. Já imagem e link é necessário buscar pelo SKU na parte de busca do site da Mobly). 
 
-### Colocar para aprovação:
+### Colocar para aprovação
 Quando um email fica pronto, é necessário enviá-lo para aprovação. Isso acontece através do botão *Start aproval process*<s>(?)</s> no canto superior direito. Uma pequena modal irá abrir. Clicar no segundo dropdown, selecionando o grupo *Marketing aprove* e depois no botão no canto inferior dessa modal, enviando (Esqueci o texto desse botão, perdoe). Um icone como de avião de papel irá aparecer, indicando que deu tudo certo. 
 
-### Testes:
+### Testes
 Quando se faz um e-mail, uma prática é enviá-lo para um teste (Deixamos as informações dos e-mails de teste dentro da pasta do Front na rede do marketing). 
 **Passos**: Assim que se clica no último next, depois que o e-mail já foi feito, uma versão renderizada irá aparecer com um erro por causa do Ampscript que não foi devidamente renderizado (O ampscript é uma linguagem que permite inserção de conteúdo dinâmico no e-mail além de conectá-lo as tabelas com informações dos clientes/produtos). No lado esquerdo haverão algumas opções que não lembro muito bem dos símbolos mas lembro das posições então vamos lá. 
 No de cima, clicar no icone da pastinha, selecionar a opção data extension, escolher a que deve se conectar aquele email (No caso de e-mails marketing normais ou apostas, escolher a pasta *E-mail Marketing list* > *Engaged list*. Os demais costumam ter uma data extension própria então procurar por uma com o nome parecido). Depois, clicar no icone logo abaixo do selecionado no canto esquerdo (Se me lembro bem, é um icone de duas pessoas uma atrás da outra). Colocar lá as informações dos e-mails de teste e clicar no botão azul **Send test**. Aguardar alguns minutos para o e-mail aparecer na caixa deles. 
